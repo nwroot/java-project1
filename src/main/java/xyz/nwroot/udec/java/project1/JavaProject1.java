@@ -15,6 +15,26 @@ public class JavaProject1 {
         art.setPeso(1);
         return art;
     }
+    
+    private static Pago makeRandomPago() {
+        switch(random.nextInt() % 3) {
+            case 0:
+                Efectivo efectivo = new Efectivo();
+                efectivo.setEfectivo(50000);
+                
+                return efectivo;
+            case 1:
+                Transferencia transferencia = new Transferencia();
+                transferencia.setBanco("banco peo");
+                transferencia.setNumCuenta(Integer.toString(random.nextInt() % 1000000));
+                return transferencia;
+            case 2:
+                Tarjeta tarjeta = new Tarjeta();
+                tarjeta.setTipo((random.nextBoolean())  ? "debito" : "credito");
+                tarjeta.setNumTransaccion(Integer.toString(random.nextInt() % 1000000));
+                return tarjeta;
+        }
+    }
 
     public static void main(String[] args) {
         OrdenCompra compra1 = new OrdenCompra();
@@ -50,5 +70,9 @@ public class JavaProject1 {
         compra2.addOrden(orden_det2);
         compra3.addOrden(orden_det3);
 
+        compra1.setPago(makeRandomPago());
+        compra2.setPago(makeRandomPago());
+        compra3.setPago(makeRandomPago());
+        
     }
 }

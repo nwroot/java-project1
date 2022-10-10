@@ -14,6 +14,10 @@ public class Pago {
     private int monto;
     private Date fecha;
 
+    Pago() {
+        this.fecha = new Date();
+    }
+    
     public int getMonto() {
         return monto;
     }

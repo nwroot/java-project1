@@ -15,6 +15,8 @@ public class OrdenCompra {
 
     private ArrayList<DetalleOrden> ordenes;
     
+    private Pago pago;
+    
     OrdenCompra() {
         this.estado = "indefinido";
         this.ordenes = new ArrayList();
@@ -71,4 +73,14 @@ public class OrdenCompra {
     public DetalleOrden getOrden(int orden) {
         return ordenes.get(orden);
     }
+
+    public Pago getPago() {
+        return pago;
+    }
+
+    public void setPago(Pago pago) {
+        this.pago = pago;
+    }
+    
+    
 }
