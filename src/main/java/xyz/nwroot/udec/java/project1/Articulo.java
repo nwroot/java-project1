@@ -9,5 +9,8 @@ package xyz.nwroot.udec.java.project1;
  * @author nwroot
  */
 class Articulo {
-    
+    private float peso;
+    private String nombre;
+    private String descripcion;
+    private int precio;
 }
