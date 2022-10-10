@@ -44,6 +44,7 @@ class DetalleOrden {
         for(int i = 0; i < articulos.size(); i++) {
             precio += articulos.get(i).getPrecio();
         }
+        //System.out.println(precio);
         return precio;
     }
 

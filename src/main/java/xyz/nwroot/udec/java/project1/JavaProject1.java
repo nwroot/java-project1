@@ -6,12 +6,14 @@ import java.util.Random;
 public class JavaProject1 {
 
     private static final Random random = new Random();
-
+    private static int abs(int n) {
+        return n > 0 ? n : -n;
+    }
     private static Articulo makeRandomProduct() {
         Articulo art = new Articulo();
         art.setNombre("Articulo indefinido x1");
         art.setDescripcion("Undefined");
-        art.setPrecio(random.nextInt() % 5000 + 1);
+        art.setPrecio(abs(random.nextInt() % 5000) + 1);
         art.setPeso(1);
         return art;
     }
@@ -26,12 +28,12 @@ public class JavaProject1 {
             case 1:
                 Transferencia transferencia = new Transferencia();
                 transferencia.setBanco("banco peo");
-                transferencia.setNumCuenta(Integer.toString(random.nextInt() % 1000000));
+                transferencia.setNumCuenta(Integer.toString(abs(random.nextInt() % 1000000)));
                 return transferencia;
             case 2:
                 Tarjeta tarjeta = new Tarjeta();
                 tarjeta.setTipo((random.nextBoolean())  ? "debito" : "credito");
-                tarjeta.setNumTransaccion(Integer.toString(random.nextInt() % 1000000));
+                tarjeta.setNumTransaccion(Integer.toString(abs(random.nextInt() % 1000000)));
                 return tarjeta;
         }
         return null;
@@ -39,7 +41,7 @@ public class JavaProject1 {
     
     private static Cliente makeRandomCliente() {
         Cliente cliente = new Cliente();
-        cliente.setNombre("Cliente" + random.nextInt() % 1000);
+        cliente.setNombre("Cliente" + abs(random.nextInt() % 1000));
         cliente.setRut("11111111-1");
         cliente.setDireccion(new Direccion());
         return cliente;
@@ -86,5 +88,7 @@ public class JavaProject1 {
         compra1.setCliente(makeRandomCliente());
         compra2.setCliente(makeRandomCliente());
         compra3.setCliente(makeRandomCliente());
+        
+        System.out.println(compra1.toString());
     }
 }

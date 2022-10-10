@@ -23,23 +23,36 @@ public class OrdenCompra {
     }
 
     public int calcPrecioSinIVA() {
-        assert (false);
-        return 0;
+        int precio = 0;
+        for(int i = 0; i < this.ordenes.size(); i++) {
+            precio += ordenes.get(i).calcPrecioSinIVA();
+        }
+        return precio;
     }
 
     public int calcIVA() {
-        assert (false);
-        return 0;
+        int precio = 0;
+        for(int i = 0; i < this.ordenes.size(); i++) {
+            precio += ordenes.get(i).calcIVA();
+        }
+        return precio;
     }
 
     public int calcPrecio() {
-        assert (false);
-        return 0;
+        int precio = 0;
+        for(int i = 0; i < this.ordenes.size(); i++) {
+            precio += ordenes.get(i).calcPrecio();
+        }
+        
+        return precio;
     }
 
     public int calcPeso() {
-        assert (false);
-        return 0;
+        int peso = 0;
+        for(int i = 0; i < this.ordenes.size(); i++) {
+            peso += ordenes.get(i).calcPeso();
+        }
+        return peso;
     }
     
     
@@ -83,4 +96,12 @@ public class OrdenCompra {
     }
     
     
+    public String toString() {
+        String string = new String();
+        string += "OrdenCompra: \n";
+        string += "  Estado: " + this.estado + "\n";
+        string += "  Precio: " + this.calcPrecio() + "\n";
+        string += "  Peso:   " + this.calcPeso() + "\n";
+        return string;
+    }
 }
