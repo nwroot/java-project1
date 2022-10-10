@@ -14,6 +14,22 @@ import java.util.Date;
 class DetalleOrden {
     private Date fecha;
     private String estado;
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
     
     private ArrayList<Articulo> articulos;
     public int calcPrecioSinIVA() {
