@@ -10,6 +10,10 @@ package xyz.nwroot.udec.java.project1;
  */
 class Direccion {
     private String direccion;
+    
+    Direccion() {
+        this.direccion = "undefined";
+    }
 
     public String getDireccion() {
         return direccion;

@@ -40,23 +40,27 @@ class DetalleOrden {
     private ArrayList<Articulo> articulos;
 
     public int calcPrecioSinIVA() {
-        assert (false);
-        return 0;
+        int precio = 0;
+        for(int i = 0; i < articulos.size(); i++) {
+            precio += articulos.get(i).getPrecio();
+        }
+        return precio;
     }
 
     public int calcIVA() {
-        assert (false);
-        return 0;
+        return (int) (calcPrecioSinIVA() * 0.19);
     }
 
     public int calcPrecio() {
-        assert (false);
-        return 0;
+        return calcPrecioSinIVA() + calcIVA();
     }
 
     public int calcPeso() {
-        assert (false);
-        return 0;
+        int peso = 0;
+        for(int i = 0; i < articulos.size(); i++) {
+            peso += articulos.get(i).getPeso();
+        }
+        return peso;
     }
 
     public void addArticulo(Articulo articulo) {

@@ -34,6 +34,15 @@ public class JavaProject1 {
                 tarjeta.setNumTransaccion(Integer.toString(random.nextInt() % 1000000));
                 return tarjeta;
         }
+        return null;
+    }
+    
+    private static Cliente makeRandomCliente() {
+        Cliente cliente = new Cliente();
+        cliente.setNombre("Cliente" + random.nextInt() % 1000);
+        cliente.setRut("11111111-1");
+        cliente.setDireccion(new Direccion());
+        return cliente;
     }
 
     public static void main(String[] args) {
@@ -74,5 +83,8 @@ public class JavaProject1 {
         compra2.setPago(makeRandomPago());
         compra3.setPago(makeRandomPago());
         
+        compra1.setCliente(makeRandomCliente());
+        compra2.setCliente(makeRandomCliente());
+        compra3.setCliente(makeRandomCliente());
     }
 }
