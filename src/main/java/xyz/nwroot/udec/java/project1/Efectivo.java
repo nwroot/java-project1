@@ -10,6 +10,6 @@ package xyz.nwroot.udec.java.project1;
  */
 public class Efectivo extends Pago {
     public int calcDevolucion() {
-        
+        return 0;
     }
 }

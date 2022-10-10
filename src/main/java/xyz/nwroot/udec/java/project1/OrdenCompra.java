@@ -8,7 +8,39 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class OrdenCompra {
+    private Date fecha;
+    private String estado;
 
+    private Cliente cliente;
+
+    private ArrayList<DetalleOrden> ordenes;
+    
+    OrdenCompra() {
+        this.estado = "indefinido";
+        this.ordenes = new ArrayList();
+    }
+
+    public int calcPrecioSinIVA() {
+        assert (false);
+        return 0;
+    }
+
+    public int calcIVA() {
+        assert (false);
+        return 0;
+    }
+
+    public int calcPrecio() {
+        assert (false);
+        return 0;
+    }
+
+    public int calcPeso() {
+        assert (false);
+        return 0;
+    }
+    
+    
     public Date getFecha() {
         return fecha;
     }
@@ -32,31 +64,11 @@ public class OrdenCompra {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
-    private Date fecha;
-    private String estado;
-
-    private Cliente cliente;
-
-    private ArrayList<DetalleOrden> ordenes;
-
-    public int calcPrecioSinIVA() {
-        assert (false);
-        return 0;
+    
+    public void addOrden(DetalleOrden orden) {
+        ordenes.add(orden);
     }
-
-    public int calcIVA() {
-        assert (false);
-        return 0;
-    }
-
-    public int calcPrecio() {
-        assert (false);
-        return 0;
-    }
-
-    public int calcPeso() {
-        assert (false);
-        return 0;
+    public DetalleOrden getOrden(int orden) {
+        return ordenes.get(orden);
     }
 }

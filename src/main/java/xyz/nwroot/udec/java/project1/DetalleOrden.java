@@ -12,8 +12,14 @@ import java.util.Date;
  * @author nwroot
  */
 class DetalleOrden {
+
     private Date fecha;
     private String estado;
+
+    DetalleOrden() {
+        this.estado = "indefinido";
+        this.articulos = new ArrayList();
+    }
 
     public Date getFecha() {
         return fecha;
@@ -30,25 +36,34 @@ class DetalleOrden {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
     private ArrayList<Articulo> articulos;
+
     public int calcPrecioSinIVA() {
-        assert(false);
+        assert (false);
         return 0;
     }
-    
+
     public int calcIVA() {
-                assert(false);
+        assert (false);
         return 0;
     }
-    
+
     public int calcPrecio() {
-                assert(false);
+        assert (false);
         return 0;
     }
-    
+
     public int calcPeso() {
-                assert(false);
+        assert (false);
         return 0;
+    }
+
+    public void addArticulo(Articulo articulo) {
+        articulos.add(articulo);
+    }
+
+    public Articulo getArticulo(int articulo) {
+        return articulos.get(articulo);
     }
 }
